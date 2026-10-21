@@ -1,0 +1,64 @@
+@import "./components/MobileTab";
+@import "./admin/components/MobileTabVariants";
+
+.acpl-mobile-tab-Page {
+  .FormSectionGroup {
+    row-gap: 1rem;
+  }
+}
+
+.MobileTabAvailableItems,
+.MobileTabVariants {
+  .FormSection-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.MobileTabAvailableItems {
+  &-list {
+    flex: 1;
+    align-content: start;
+
+    list-style: none;
+    padding-left: 0;
+    gap: 1em;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
+
+    > li {
+      flex-basis: 33%;
+    }
+  }
+}
+
+.MobileTabPreview {
+  position: static;
+
+  @media @tablet-up {
+    display: block;
+  }
+
+  &-items {
+    gap: 0.3rem;
+  }
+}
+
+.MobileTab-item {
+  &:not(&--editable) {
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+
+.EditCustomTabItemModal {
+  &-delete {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,16 @@
+import app from 'flarum/common/app';
+import Avatar from 'flarum/common/components/Avatar';
+import SessionDropdown from 'flarum/forum/components/SessionDropdown';
+
+export default class MobileTabSessionDropdown extends SessionDropdown {
+  getButtonContent() {
+    const { user } = app.session;
+
+    return [
+      <Avatar user={user} />,
+      ' ',
+      // The username can be long, so it is better to display "Profile"
+      <span className="Button-label">{app.translator.trans('acpl-mobile-tab.lib.item.profile')}</span>,
+    ];
+  }
+}
